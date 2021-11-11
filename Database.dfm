@@ -12,15 +12,14 @@ object Connection: TConnection
     Catalog = ''
     Properties.Strings = (
       'controls_cp=CP_UTF16')
+    Connected = True
     HostName = ''
     Port = 3306
     Database = 'GerenciadorUsuario'
     User = 'root'
     Password = ''
     Protocol = 'mysql'
-    LibraryLocation = 
-      'D:\0 - Sistema\Documentos\Embarcadero\Studio\Projects\Gerenciado' +
-      'rUsuario\Libs\libmySQL.dll'
+    LibraryLocation = 'D:\0 - Sistema\Desktop\Gerenciamento-Usuario\Libs\libmySQL.dll'
     Left = 24
     Top = 24
   end
@@ -30,8 +29,7 @@ object Connection: TConnection
       
         'SELECT u_id as ID, u_name as Nome, u_cpf as CPF, u_dataNasciment' +
         'o as '#39'Data de Nascimento'#39', u_email as '#39'E-mail'#39',u_status as Statu' +
-        's , u_adm as Adminstrador FROM GerenciadorUsuario.usuario where ' +
-        'u_visible = 1')
+        's , u_adm as Adminstrador FROM GerenciadorUsuario.usuario ')
     Params = <>
     UpdateMode = umUpdateAll
     Left = 23
