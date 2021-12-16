@@ -20,9 +20,6 @@ EditingLayerName=NewLayer0
 [Connection.tabelaUsuario]
 Coordinates=329,1,136,33
 
-[Connection.Query]
-Coordinates=150,10,115,69
-
 [Connection.]
 Coordinates=10,10,112,195
 
@@ -40,4 +37,7 @@ Coordinates=141,220,75,33
 
 [btnCriarUsers]
 Coordinates=17,343,75,33
+
+[Connection.QueryMySQL]
+Coordinates=150,10,115,69
 

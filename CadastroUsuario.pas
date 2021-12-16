@@ -45,7 +45,7 @@ procedure TFM_Usuario.btnCancelClick(Sender: TObject);
 begin
   if Application.MessageBox('Deseja continuar?', 'Quaisquer alteração não será salva !',MB_ICONQUESTION + MB_YESNO)= id_yes then
     begin
-      Connection.Query.RevertRecord;
+      Connection.QueryMySQL.RevertRecord;
       FM_Usuario.Close;
     end;
 
@@ -54,7 +54,7 @@ end;
 procedure TFM_Usuario.btnOkClick(Sender: TObject);
 begin
   try
-    Connection.Query.Edit;
+    Connection.QueryMySQL.Edit;
   finally
     Application.MessageBox('Dados do usuário salvo com sucesso.','Salvo',MB_OK + MB_ICONINFORMATION);
     FM_Usuario.Close;
@@ -64,7 +64,7 @@ end;
 
 procedure TFM_Usuario.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
-Connection.Query.Refresh;
+Connection.QueryMySQL.Refresh;
 end;
 
 

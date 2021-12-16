@@ -61,8 +61,8 @@ var
 begin
     select := 'SELECT u_id as ID, u_name as Nome, u_cpf as CPF, u_dataNascimento as "Data de Nascimento", u_email as "E-mail",IF(u_status<1,"Desativado", "Ativo" ) as Status ,  IF(u_adm!=1, "Não","Sim") as Adminstrador ';
     tabela := 'FROM GerenciadorUsuario.usuario';
-    Connection.Query.SQL.Text := select + tabela + ' where u_name LIKE "'+ txtBusca.Text + '%"';
-    Connection.Query.Open;
+    Connection.QueryMySQL.SQL.Text := select + tabela + ' where u_name LIKE "'+ txtBusca.Text + '%"';
+    Connection.QueryMySQL.Open;
 end;
 
 
@@ -73,7 +73,7 @@ end;
 
 procedure TMain.btnNovoUserClick(Sender: TObject);
 begin
-    Connection.Query.Insert;
+    Connection.QueryMySQL.Insert;
     FM_Usuario.showmodal;
 end;
 
@@ -92,7 +92,7 @@ begin
   Except
     Application.MessageBox('Erro ao estabelecer uma conexão com o banco de dados!','Erro de conexão',MB_OK + MB_ICONERROR);
   end;
-    Connection.Query.Refresh;
+    Connection.QueryMySQL.Refresh;
 end;
 
 
@@ -100,7 +100,7 @@ procedure TMain.btnConectarClick(Sender: TObject);
 begin
   Try
     Connection.conexaoBanco.Connected := True;
-    Connection.Query.Active:=True;
+    Connection.QueryMySQL.Active:=True;
     componentesTela(true);
   Except
     Application.MessageBox('Erro ao estabelecer uma conexão com o banco de dados!','Erro de conexão',MB_OK + MB_ICONERROR);
@@ -118,7 +118,7 @@ begin
     Connection.exeSQL.Script.Add('INSERT INTO GerenciadorUsuario.usuario (u_name, u_cpf, u_dataNascimento, u_email, u_status, u_adm) VALUES("Janaina do Santos", "123.137.258-55", "10/12/1993", "Janaina@hotmail.com", "Ativo", "Não");');
 	  Connection.exeSQL.Script.Add('INSERT INTO GerenciadorUsuario.usuario (u_name, u_cpf, u_dataNascimento, u_email, u_status, u_adm) VALUES("Henrique Oliveira", "123.147.258-41", "10/12/1991", "Henrique@hotmail.com", "Ativo", "Sim");');
     Connection.exeSQL.Execute;
-    Connection.Query.Refresh;
+    Connection.QueryMySQL.Refresh;
   Except
     Application.MessageBox('Erro ao estabelecer uma conexão com o banco de dados!','Erro de conexão',MB_OK + MB_ICONERROR);
 
@@ -130,7 +130,7 @@ begin
 
   try
     Connection.conexaoBanco.Connected := True;
-    Connection.Query.Active:=True;
+    Connection.QueryMySQL.Active:=True;
   except
     componentesTela(false);
     Application.MessageBox('Erro ao estabelecer uma conexão com o banco de dados!','Erro de conexão',MB_OK + MB_ICONERROR);

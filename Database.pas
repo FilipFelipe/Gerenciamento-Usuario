@@ -11,8 +11,10 @@ type
   TConnection = class(TDataModule)
     tabelaUsuario: TDataSource;
     conexaoBanco: TZConnection;
-    Query: TZQuery;
+    QueryMySQL: TZQuery;
     exeSQL: TZSQLProcessor;
+    ZConnectionPG: TZConnection;
+    ZQueryPG: TZQuery;
     procedure exeSQLBeforeExecute(Processor: TZSQLProcessor;
       StatementIndex: Integer);
     procedure exeSQLError(Processor: TZSQLProcessor; StatementIndex: Integer;

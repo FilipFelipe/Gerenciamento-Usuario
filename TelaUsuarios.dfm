@@ -4,7 +4,7 @@ object Main: TMain
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'Main'
-  ClientHeight = 653
+  ClientHeight = 657
   ClientWidth = 1045
   Color = clWhite
   Font.Charset = DEFAULT_CHARSET
@@ -167,7 +167,7 @@ object Main: TMain
       Left = 25
       Top = 24
       Width = 200
-      Height = 44
+      Height = 41
       Cursor = crIBeam
       Color = clInactiveBorder
       Font.Charset = DEFAULT_CHARSET
@@ -278,7 +278,7 @@ object Main: TMain
     object btnNovoUser: TBitBtn
       Left = 924
       Top = 24
-      Width = 112
+      Width = 118
       Height = 44
       Caption = 'Novo'
       DragCursor = crHandPoint
@@ -342,9 +342,9 @@ object Main: TMain
       OnClick = btnNovoUserClick
     end
     object btnEditUser: TBitBtn
-      Left = 806
+      Left = 800
       Top = 24
-      Width = 112
+      Width = 118
       Height = 44
       Cursor = crHandPoint
       Caption = 'Editar'
@@ -412,7 +412,7 @@ object Main: TMain
     Left = 8
     Top = 88
     Width = 1033
-    Height = 557
+    Height = 561
     DataSource = Connection.tabelaUsuario
     Options = [dgTitles, dgIndicator, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
     ParentShowHint = False
@@ -582,7 +582,7 @@ object Main: TMain
       end>
   end
   object Menu: TMainMenu
-    Left = 648
+    Left = 736
     Top = 24
     object Inicio1: TMenuItem
       Caption = 'Inicio'
@@ -612,7 +612,7 @@ object Main: TMain
     end
   end
   object Acoes: TActionList
-    Left = 592
+    Left = 696
     Top = 25
     object Sair: TAction
       Caption = 'Sair'
